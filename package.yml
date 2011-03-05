@@ -1,0 +1,28 @@
+name: "Extras"
+
+exports: "mootools-extras.js"
+
+web: "[mootools.net](http://mootools.net)"
+
+description: "MooTools Extras"
+
+license: "[MIT License](http://mootools.net/license.txt)"
+
+copyright: "&copy; Jean-Philippe Dery (jeanphilippe.dery@gmail.com)"
+
+authors: "Jean-Philippe Dery (jeanphilippe.dery@gmail.com)"
+
+sources:
+  - "Source/Class/Class.Extras.js"
+  - "Source/Class/Class.Element.js"
+  - "Source/Class/Class.Mutator.Protected.js"
+  - "Source/Class/Class.Mutator.Static.js"
+  - "Source/Element/Element.Extras.js"
+  - "Source/Element/Element.Properties.js"
+  - "Source/Fx/Fx.Accordion.Radio.js"
+  - "Source/Selector/Selector.Apply.js"
+  - "Source/Selector/Selector.Attach.js"
+  - "Source/Types/Array.Extras.js"
+  - "Source/Types/String.Extras.js"
+  - "Source/UI/UI.Element.js"
+  - "Source/UI/UI.Control.js"
