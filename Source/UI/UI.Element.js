@@ -99,6 +99,11 @@ UI.Element = new Class({
 		this.element.adopt.apply(this.element, arguments);
 		return this;
 	},
+	
+	inject: function(element, where) {
+		this.element.inject(element, where);
+		return this;
+	},	
 
 	empty: function() {
 		this.element.empty();
