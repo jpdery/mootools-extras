@@ -41,7 +41,9 @@ Class.extend({
 		var instance = new klass;
 		delete klass.$prototyping;
 		var params = Array.prototype.slice.call(arguments, 1);
-		instance.initialize.apply(instance, params);
+		if (instance.initialize) {
+			instance.initialize.apply(instance, params);
+		}		
 		return instance;
 	}
 
