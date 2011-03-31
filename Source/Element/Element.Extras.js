@@ -34,5 +34,9 @@ Element.implement
 		if (match) string = match[1];
 		this.set('html', string);
 		return this
+	},
+	
+	getInsides: function() {
+		return Array.from(this.childNodes);	
 	}
 });
