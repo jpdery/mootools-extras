@@ -36,7 +36,7 @@ Element.implement
 		return this
 	},
 	
-	getInsides: function() {
+	getContents: function() {
 		return Array.from(this.childNodes);	
 	}
 });
