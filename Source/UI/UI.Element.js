@@ -20,7 +20,6 @@ requires:
 	- Core/Fx.Morph
 	- More/Class.Binds
 	- More/Element.Shortcuts
-	- Class-Extras/Class.Binds
 
 provides:
 	- UI.Element
@@ -34,8 +33,7 @@ UI.Element = new Class({
 
 	Implements: [
 		Events,
-		Options,
-		Class.Binds
+		Options
 	],
 
 	element: null,
