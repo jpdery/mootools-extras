@@ -3,8 +3,8 @@
 
 name: UI.Element
 
-description: Provide the base class for every classes that use an element at
-             core.
+description: Provide a refactorized UI.Element class where the initialize call
+             the setup method before attaching events.
 
 license: MIT-style license.
 
@@ -20,7 +20,7 @@ requires:
 	- Core/Fx.Morph
 	- More/Class.Binds
 	- More/Element.Shortcuts
-	- Class.Element
+	- Class-Extras/Class.Binds
 
 provides:
 	- UI.Element
@@ -35,8 +35,12 @@ UI.Element = new Class({
 	Implements: [
 		Events,
 		Options,
-		Class.Element
+		Class.Binds
 	],
+
+	element: null,
+
+	name: null,
 
 	options: {
 		className: ''
@@ -46,7 +50,17 @@ UI.Element = new Class({
 		this.setElement(element);
 		this.setOptions(options);
 		this.element.addClass(this.options.className);
+		this.setup();
 		this.attachEvents();
+		return this;
+	},
+
+	create: function() {
+		return new Element('div');
+	},
+
+	setup: function() {
+		this.name = this.element.getProperty('data-name');
 		return this;
 	},
 
@@ -63,6 +77,21 @@ UI.Element = new Class({
 
 	detachEvents: function() {
 		return this;
+	},
+
+	setElement: function(element) {
+		if (this.element == null) this.element = document.id(element);
+		if (this.element == null) this.element = document.getElement(element);
+		if (this.element == null) this.element = this.create();
+		return this;
+	},
+
+	getElement: function(selector) {
+		return arguments.length ? this.element.getElement(arguments[0]) : this.element;
+	},
+
+	toElement: function() {
+		return this.element;
 	},
 
 	show: function() {
@@ -95,15 +124,20 @@ UI.Element = new Class({
 		return this;
 	},
 
+	inject: function(element, where) {
+		this.element.inject(element, where);
+		return this;
+	},
+
 	adopt: function() {
 		this.element.adopt.apply(this.element, arguments);
 		return this;
 	},
-	
-	inject: function(element, where) {
-		this.element.inject(element, where);
+
+	grab: function(element, where) {
+		this.element.grab(element, where);
 		return this;
-	},	
+	},
 
 	empty: function() {
 		this.element.empty();
