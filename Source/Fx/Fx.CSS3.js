@@ -118,9 +118,9 @@ Fx.CSS3 = new Class({
 	},
 
 	start: function() {
-		this.setTransitionInitialState.delay(1, this);
-		this.setTransitionParameters.delay(2, this);
-		this.play.delay(3, this);
+		this.setTransitionInitialState.delay(10, this);
+		this.setTransitionParameters.delay(20, this);
+		this.play.delay(30, this);
 		return this;
 	},
 

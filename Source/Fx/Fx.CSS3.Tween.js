@@ -51,7 +51,7 @@ Fx.CSS3.Tween = new Class({
 	},
 
 	setTransitionParameters: function() {
-		this.element.setStyle(this.transition, this.property + ' ' + this.options.duration + 'ms ' + this.options.transition);
+		this.element.setStyle(this.transition, 'all ' + this.options.duration + 'ms ' + this.options.transition);
 		return this.parent();
 	},
 
