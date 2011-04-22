@@ -34,9 +34,11 @@ Object.append(Selector, {
 				var pair = selector.split('::');
 				$$(pair[0]).each(function(elem, index) {
 					if (pair.length == 1) return rule(elem, index);
-					elem.addEvent(pair[1], function(e) {
-						rule.call(elem, elem, index, e);
-					});
+					var r = rule;
+					var event = function(e) {
+						r.call(this, elem, index, e);
+					};
+					elem.addEvent(pair[1], event);
 				});
 			}, this);
 		}
