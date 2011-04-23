@@ -12,7 +12,8 @@ author:
 	- Jean-Philippe Dery (jeanphilippe.dery@gmail.com)
 
 requires:
-
+	- Core/Array
+	
 provides:
 	- Console.Trace
 
