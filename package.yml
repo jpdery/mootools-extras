@@ -17,6 +17,7 @@ sources:
   - "Source/Class/Class.Element.js"
   - "Source/Class/Class.Mutator.Protected.js"
   - "Source/Class/Class.Mutator.Static.js"
+  - "Source/Class/Class.Binds.js"
   - "Source/Console/Console.Trace.js"
   - "Source/Element/Element.Extras.js"
   - "Source/Element/Element.Properties.js"
